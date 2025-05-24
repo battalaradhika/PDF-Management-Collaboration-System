@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Your PDFs</h2>
+
+<form method="get" class="mb-3">
+  <input type="text" name="q" placeholder="Search PDFs by name..." value="{{ query }}" class="form-control" />
+</form>
+
+<a href="{% url 'upload_pdf' %}" class="btn btn-success mb-3">Upload New PDF</a>
+
+{% if pdfs %}
+  <ul class="list-group">
+    {% for pdf in pdfs %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="{% url 'pdf_detail' pdf.id %}">{{ pdf.name }}</a>
+        <a href="{% url 'generate_share_link' pdf.id %}" class="btn btn-sm btn-outline-primary">Share</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No PDFs found.</p>
+{% endif %}
+{% endblock %}

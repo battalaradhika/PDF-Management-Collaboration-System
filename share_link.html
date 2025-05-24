@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Share Link for "{{ pdf.name }}"</h2>
+<p>Send this link to invite others to view and comment:</p>
+<div class="alert alert-info">
+  <a href="{{ share_url }}">{{ share_url }}</a>
+</div>
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+{% endblock %}
