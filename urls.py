@@ -1,25 +1,13 @@
-"""
-URL configuration for djangoProject27 project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('',include('FirstApp.urls')),
+    path('signup/', views.signup_view, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('', views.dashboard, name='dashboard'),
+    path('upload/', views.upload_pdf, name='upload_pdf'),
+    path('pdf/<int:pdf_id>/', views.pdf_detail, name='pdf_detail'),
+    path('pdf/<int:pdf_id>/share/', views.generate_share_link, name='generate_share_link'),
+    path('shared/<uuid:uuid>/', views.shared_pdf_view, name='shared_pdf'),
 ]
-
-
-
