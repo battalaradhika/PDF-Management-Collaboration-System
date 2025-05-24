@@ -21,7 +21,23 @@ HTML/CSS
 
 SQLite 
 
-Running the App :
+⚙️ Setup Instructions
+
+1.Install dependencies
+
+pip install -r requirements.txt
+
+2.Run database migrations
+
+python manage.py migrations
+
+
+3.python manage.py migrate
+
+python manage.py migrate
+
+
+4.Running the App :
 
 --> To run the App, we use : py manage.py runserver
 
