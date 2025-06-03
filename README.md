@@ -44,3 +44,5 @@ python manage.py migrate
 ⚠ Then, the development server will be started at
  http://127.0.0.1:8000/
 
+ http://127.0.0.1:8000/login/?next=/
+
